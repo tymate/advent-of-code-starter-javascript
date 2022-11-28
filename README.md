@@ -1,4 +1,4 @@
-# 🎄 Advent of code 2021
+# 🎄 Advent of code 2022
 
 This is a starter for the advent of code, in TypeScript.
 Fork it/clone it, and get started!
