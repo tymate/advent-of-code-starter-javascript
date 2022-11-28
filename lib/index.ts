@@ -32,14 +32,13 @@ const launch = async () => {
       }
     }
 
-    const { partOne, partTwo, formatInput } = loadedFile;
+    const { partOne, partTwo } = loadedFile;
 
     if (process.env.NODE_ENV !== 'test') {
       run({
         pathToInput: `${day}/input.txt`,
         partOne,
         partTwo,
-        formatInput,
       });
     }
   } catch (err) {
