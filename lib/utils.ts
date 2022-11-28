@@ -1,37 +1,34 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-type Run = {
-  pathToInput: string;
-  formatInput: Function;
-  partOne: Function;
-  partTwo: Function;
-  comment?: string;
-};
-
-export const loadFile = async (fileName: string): Promise<string> => {
+export const loadFile = async (fileName: string): Promise<string | void> => {
   try {
     const data = await fs.readFile(
-      path.join(__dirname, '..', fileName),
+      path.join(__dirname, '..', 'src', fileName),
       'utf-8',
     );
     return data;
-  } catch (err) {}
+  } catch (err) {
+    console.log('Error loading file');
+  }
 };
 
-export const range = (size: number): number[] => [...Array(size).keys()];
-
-/* istanbul ignore next */
 export const run = async ({
   pathToInput,
   formatInput,
   partOne,
   partTwo,
   comment,
-}: Run): Promise<void> => {
+}: {
+  pathToInput: string;
+  formatInput: (input: string) => any;
+  partOne: (input: any) => any;
+  partTwo: (input: any) => any;
+  comment?: string;
+}): Promise<void> => {
   const suffix = Boolean(comment) ? ` (${comment})` : ``;
   const fileContent = await loadFile(pathToInput);
-  const input = formatInput(fileContent);
+  const input = formatInput(fileContent || '');
 
   console.time(`\x1b[2mTotal time${suffix}\x1b[0m`);
 

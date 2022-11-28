@@ -5,6 +5,7 @@ Fork it/clone it, and get started!
 
 ## Completion
 
+<!-- Auto completion:START - Do not remove or modify this section -->
 <table>
   <thead>
     <tr>
@@ -15,6 +16,7 @@ Fork it/clone it, and get started!
   <tbody>
   </tbody>
 </table>
+<!-- Auto completion:END -->
 
 ![Demo animated gif](demo.gif)
 
@@ -39,7 +41,7 @@ yarn generate --day 01
 ### 3. Run a single day
 
 ```shell
-yarn start
+yarn start --day 01
 # or, to keep process open and listen to changes
 yarn dev --day 01
 ```

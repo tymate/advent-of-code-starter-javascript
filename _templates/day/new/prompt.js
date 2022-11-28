@@ -17,9 +17,18 @@ module.exports = {
             message: 'Which day should we add?',
             initial: `${new Date().getDate()}`.padStart(2, '0'),
           },
+          {
+            type: 'select',
+            name: 'extension',
+            message: 'Which language would you like?',
+            choices: ['JavaScript', 'TypeScript'],
+          },
         ])
-        .then(({ day }) => {
-          resolve({ day: day.padStart(2, '0') });
+        .then(({ day, extension }) => {
+          resolve({
+            day: day.padStart(2, '0'),
+            ext: extension === 'TypeScript' ? 'ts' : 'js',
+          });
         });
     });
   },
