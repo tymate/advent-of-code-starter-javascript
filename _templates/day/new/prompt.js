@@ -36,7 +36,7 @@ module.exports = {
             message: 'Which language would you like?',
             choices: ['JavaScript', 'TypeScript'],
             initial:
-              extension.toLocaleLowerCase() === 'typescript'
+              (extension || '').toLocaleLowerCase() === 'typescript'
                 ? 'TypeScript'
                 : 'JavaScript',
           },
