@@ -34,6 +34,8 @@ yarn
 yarn generate
 # or
 yarn generate --day 01
+# or
+yarn generate --day 01 --extension typescript # javascript and typescript handled
 ```
 
 ### 3. Run a single day
